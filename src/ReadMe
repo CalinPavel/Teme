@@ -1,0 +1,22 @@
+                 ---         Tema I         ---
+                      Pavel Calin - Grupa A
+
+ Problema1:
+    -in student register am adaugat un student doar in cazul
+    in care acesta reprezinta o intrare vailda
+    -am testat metodele de scriere si citire in cadrul functiei main
+
+ Problema2:
+    -un producator nu poate adauga in buffer cand acesta e full
+    -un consumator nu poate lua din buffer cand acesta este gol
+    -mai multi producatori nu pot scrie in buffer in aceleasi timp
+    -am folosit semafoare pentru a evita un posibil deadlock , cand
+    cele doua parti asteapta in acelasi moment de timp
+    -am folosit un mutex pentru controlul buffer-ului
+    -pentru sincronizarea thead-urilor puteam sa folosesc si synchronized
+    sau volatile pentru a marca zonele critice , dar am ales sa folosesc
+    un mutex clasic
+    -pentru implementarea cozii am folosit o lista , dar am pastrat principul
+    FIFO
+    -am testat programul pentru producerea a 90 de documente
+
