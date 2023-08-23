@@ -13,7 +13,8 @@ public class StudentRegister {
     }
 
     public void addStudent(Student student) {
-        students.add(student);
+        if(student.getGrade() != -1 && !student.getName().equals("Invalid"))
+            students.add(student);
     }
 
     public void saveToFile(String filename, List<Student> studentArray) {
@@ -52,7 +53,6 @@ public class StudentRegister {
             e.printStackTrace();
         }
     }
-
 
     public void printStudents() {
         for (Student student : students) {

@@ -8,6 +8,7 @@ class Student implements Serializable {
     private int grade;
 
     public Student(String name, int grade) {
+
         try {
             if (grade < 1 || grade > 10) {
                 throw new IllegalArgumentException("Grade must be between 1 and 10");
@@ -25,16 +26,14 @@ class Student implements Serializable {
             this.name = name;
         }catch (IllegalArgumentException e){
             System.err.println("Invalid name: " + e.getMessage());
-            this.name=null;
+            this.name="Invalid";
         }
     }
 
     private boolean isValidName(String name) {
-        for (char c : name.toCharArray()) {
-            if (Character.isDigit(c)) {
+        for (char c : name.toCharArray())
+            if (Character.isDigit(c))
                 return false;
-            }
-        }
         return true;
     }
 
